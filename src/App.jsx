@@ -5,8 +5,8 @@ const App = () => {
   return (
     <div className="App">
       <Navbar title="Dev-Labour" about="About Us" home="Home" />
-      {/* <TextForm heading="Enter your text here" /> */}
-      <About />
+      <TextForm heading="Enter your text here" />
+      {/* <About /> */}
     </div>
   )
 }

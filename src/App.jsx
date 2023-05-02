@@ -20,7 +20,7 @@ const App = () => {
     <div className="App">
       <Navbar title="Dev-Labour" about="About Us" home="Home" />
       <TextForm/>
-      <div className = "flex-inline">
+      <div className = "flex gap-3 inline-flex flex-wrap">
       {jokee}
       </div>
       <Store />

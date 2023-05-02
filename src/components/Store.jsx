@@ -23,7 +23,7 @@ export default function Store() {
     },
   ]
 
-  let productt = products.map((product) => {
+  let product = products.map((product) => {
     return (
     <Product key={product.id} name={product.name} description={product.description} price={product.price}/>)
   })
@@ -36,7 +36,7 @@ export default function Store() {
 
       <div className="grid grid-cols-3 gap-4">
         {
-          productt
+          product
         }
       </div>
     </div>

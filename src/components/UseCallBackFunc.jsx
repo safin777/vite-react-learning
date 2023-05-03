@@ -24,22 +24,23 @@ export default function UseCallBackFunc() {
     })
   }, [])
 
-  const isEvenOrOdd = useMemo(() => {
-    let i = 0;
-    while(i < 200000) i++;
+  const isEvenOrOdd =() => {
     return count % 2 === 0;
 
-  }, [count])
+  }
   
 
   return (
     <div className='flex-1 my-6'>
+    
         <p className='text-white'>
             This is useCallBackFunc counter : 
         </p>
+
         <p className='text-white'>
           {isEvenOrOdd() ? 'Even' : 'Odd'}
         </p>
+
         <div>
             <p className='text-white'>Count : {count}  </p>
             <button type="button" onClick={incrementByOne} className="btn btn-primary p-2  bg-slate-600 mx-2">Increment by 1</button>

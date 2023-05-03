@@ -3,28 +3,29 @@ import TextForm from "./components/TextForm"
 import About from "./components/About"
 import Store from "./components/Store"
 import Jokes from "./components/Jokes"
-import { useState, useEffect } from "react"
+import { useState, useEffect,useCallback } from "react"
 import useRendomJokes from "./components/useRandomJokes"
+import Login from "./components/Login"
+import UseCallBackFunc from "./components/useCallBackFunc"
 
 const App = () => {
 
+ 
+
   //hooks
-  const joke = useRendomJokes();
+  // const joke = useRendomJokes();
   
-  const jokee = joke.map((jok)=>{
-     return (
-        <Jokes key={jok.id} id= { jok.id } setup={jok.setup} punchline={jok.punchline} type={jok.type} /> )
-  })
+  // const jokee = joke.map((jok)=>{
+  //    return (
+  //       <Jokes key={jok.id} id= { jok.id } setup={jok.setup} punchline={jok.punchline} type={jok.type} /> )
+  // })
 
   return (
+
     <div className="App">
-      <Navbar title="Dev-Labour" about="About Us" home="Home" />
-      <TextForm/>
-      <div className = "flex gap-3 inline-flex flex-wrap">
-      {jokee}
-      </div>
-      <Store />
-       
+
+      <Navbar title="💵DEV-lab💵" about="Abouts" home="Home" />
+      <UseCallBackFunc/>
       
     </div>
   )

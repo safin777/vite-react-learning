@@ -2,16 +2,34 @@ import React from 'react'
 import { useReducer } from 'react'
 
 
-const initailState = 0;  //1st step set an initial state for the reducer
-const reducer = (updatedState, action) =>{  //2nd step set an updated state and action  for the reducer 
-    switch(action){      //3rd step set an action for the reducer , use switch action for multiple reducers
+// const initailState = 0;  //1st step set an initial state for the reducer
+// const reducer = (updatedState, action) =>{  //2nd step set an updated state and action  for the reducer 
+//     switch(action){      //3rd step set an action for the reducer , use switch action for multiple reducers
+//         case 'increment':
+//             return updatedState + 1;  // 4th return the updated state
+//         case 'decrement':
+//             return updatedState - 1;
+//         default:
+//             return updatedState;
+//     }
+// }
+
+
+//complex way to reduce 
+const initailState = {
+    counter : 0, 
+}  //1st step set an initial state for the reducer
+
+const reducer =  (state,action) =>{
+   switch(action.type){
         case 'increment':
-            return updatedState + 1;  // 4th return the updated state
+            return { counter : state.counter + 1 };
         case 'decrement':
-            return updatedState - 1;
+            return { counter : state.counter - 1 };
         default:
-            return updatedState;
-    }
+            return state;
+        
+   }
 }
 
 export default function CounterUseReducer() {
@@ -26,14 +44,24 @@ export default function CounterUseReducer() {
         <p className='text-white text-2xl text-center'> ⚡  <span className='text-green-300'>Its use for the state management</span> ⚡</p>
 
         <div className='text-white text-2xl text-center mt-12'>
-            <p>Count : {count}</p>
+            <p>Count:{count.counter} </p>
+            {/* <p>Count:{count} </p> */}
         </div>
 
         <div className='flex justify-center my-10'>
-            <button onClick={()=> dispatch('increment')} className='px-5 py-2 bg-white rounded-full text-black'>➕</button>  
-            {/* 6th step set an action for the reducer */}
+            {/* <button onClick={()=> dispatch('increment')} className='px-5 py-2 bg-white rounded-full text-black'>➕</button>  
             <span className='text-white'>♻️♻️♻️♻️♻️♻️♻️♻️♻️♻️</span>
             <button onClick={()=> dispatch('decrement')} className='px-5 py-2 bg-white rounded-full text-black'>➖</button>
+             */}
+
+
+             <button onClick={()=> dispatch({
+                type : 'increment',
+             })} className='px-5 py-2 bg-white rounded-full text-black'>➕</button>  
+             <span   className='text-white'>♻️♻️♻️♻️♻️♻️♻️♻️♻️♻️</span>
+            <button onClick={()=> dispatch({
+                type : 'decrement',
+            })} className='px-5 py-2 bg-white rounded-full text-black'>➖</button>
         </div>
     </div>
   )

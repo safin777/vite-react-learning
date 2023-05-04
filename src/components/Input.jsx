@@ -10,6 +10,7 @@ function Input({type ,placeholder},ref) {
   )
 }
 
-const forwardednput = React.forwardRef(Input);
+const forwardednput = React.forwardRef(Input); 
 
 export default forwardednput;
+

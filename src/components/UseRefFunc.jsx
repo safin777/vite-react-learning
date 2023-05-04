@@ -10,7 +10,7 @@ export default function UseRefFunc() {
   const focusUseRef = useRef(null);
 
     useEffect(() => {
-        focusUseRef.current.focus();
+        focusUseRef.current.focus();  
     },[])
 
 

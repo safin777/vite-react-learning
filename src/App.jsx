@@ -8,6 +8,7 @@ import useRendomJokes from "./components/useRandomJokes"
 import Login from "./components/Login"
 import UseCallBackFunc from "./components/useCallBackFunc"
 import UseRefFunc from "./components/UseRefFunc"
+import CounterUseReducer from "./components/CounterUseReducer"
 
 const App = () => {
 
@@ -26,7 +27,8 @@ const App = () => {
     <div className="App">
 
       <Navbar title="💵DEV-lab💵" about="Abouts" home="Home" />
-      <UseRefFunc />
+      {/* <UseRefFunc /> */}
+      <CounterUseReducer />
       
     </div>
   )

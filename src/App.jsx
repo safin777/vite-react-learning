@@ -9,11 +9,14 @@ import Login from "./components/Login"
 import UseCallBackFunc from "./components/useCallBackFunc"
 import UseRefFunc from "./components/UseRefFunc"
 import CounterUseReducer from "./components/CounterUseReducer"
+import CounterThree from "./components/CounterThree"
+import CompA from "./components/CompA"
+import { createContext } from "react";
 
+
+const FirstName = createContext();
 const App = () => {
-
- 
-
+  
   //hooks
   const joke = useRendomJokes();
   
@@ -23,15 +26,22 @@ const App = () => {
   })
 
   return (
-
+    
     <div className="App">
 
       <Navbar title="💵DEV-lab💵" about="Abouts" home="Home" />
-      {/* <UseRefFunc /> */}
-      <CounterUseReducer />
-      
+
+      <FirstName.Provider value={"Safin Sayed"}>
+        <CompA/>
+      </FirstName.Provider>
+    
     </div>
   )
+
   }
 
-export default App
+export default App;
+export {FirstName};
+
+
+

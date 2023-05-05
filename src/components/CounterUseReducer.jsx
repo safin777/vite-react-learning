@@ -22,10 +22,14 @@ const initailState = {
 
 const reducer =  (state,action) =>{
    switch(action.type){
-        case 'increment':
-            return { counter : state.counter + 1 };
-        case 'decrement':
-            return { counter : state.counter - 1 };
+        case 'increment1':
+            return { counter : state.counter + action.value };
+        case 'decrement1':
+            return { counter : state.counter - action.value };
+            case 'increment5':
+            return { counter : state.counter + action.value };
+        case 'decrement5':
+            return { counter : state.counter - action.value };
         default:
             return state;
         
@@ -55,13 +59,10 @@ export default function CounterUseReducer() {
              */}
 
 
-             <button onClick={()=> dispatch({
-                type : 'increment',
-             })} className='px-5 py-2 bg-white rounded-full text-black'>➕</button>  
-             <span   className='text-white'>♻️♻️♻️♻️♻️♻️♻️♻️♻️♻️</span>
-            <button onClick={()=> dispatch({
-                type : 'decrement',
-            })} className='px-5 py-2 bg-white rounded-full text-black'>➖</button>
+            <button onClick={()=> dispatch({type : 'increment1', value:1})} className='px-5 py-2 bg-white rounded-full text-black'>➕1</button>  
+            <button onClick={()=> dispatch({type : 'decrement1', value:1})} className='px-5 py-2 bg-white rounded-full text-black'>➖1</button>
+            <button onClick={()=> dispatch({type : 'increment5', value:5})} className='px-5 py-2 bg-white rounded-full text-black'>➕5</button>  
+            <button onClick={()=> dispatch({type : 'decrement5', value:5})} className='px-5 py-2 bg-white rounded-full text-black'>➖5</button>
         </div>
     </div>
   )

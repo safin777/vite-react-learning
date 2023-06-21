@@ -15,8 +15,8 @@ class Context {
 
 }
 
-function createContext() {
-    const context = new Context();
+function createContext(value = null) {
+    const context = new Context(value);
     return {
         Provider: context.Provider,
         Consumer: context.Consumer

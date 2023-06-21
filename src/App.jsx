@@ -12,28 +12,30 @@ import CounterUseReducer from "./components/CounterUseReducer"
 import CounterThree from "./components/CounterThree"
 import CompA from "./components/CompA"
 import { createContext } from "react";
+import RedCounter from "./components/RedCounter"
 
 
 const FirstName = createContext();
+
 const App = () => {
   
   //hooks
-  const joke = useRendomJokes();
+  // const joke = useRendomJokes();
   
-  const jokee = joke.map((jok)=>{
-     return (
-        <Jokes key={jok.id} id= { jok.id } setup={jok.setup} punchline={jok.punchline} type={jok.type} /> )
-  })
+  // const jokee = joke.map((jok)=>{
+  //    return (
+  //       <Jokes key={jok.id} id= { jok.id } setup={jok.setup} punchline={jok.punchline} type={jok.type} /> )
+  // })
 
   return (
     
     <div className="App">
 
       <Navbar title="💵DEV-lab💵" about="Abouts" home="Home" />
-
-      <FirstName.Provider value={"Safin Sayed"}>
+      <RedCounter/>
+      {/* <FirstName.Provider value={"Safin Sayed"}>
         <CompA/>
-      </FirstName.Provider>
+      </FirstName.Provider> */}
     
     </div>
   )
